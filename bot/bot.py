@@ -5,6 +5,8 @@ logging.basicConfig(level=logging.INFO)
 
 cli = discord.Client()
 
+token = os.getenv("DISCORD_BOT_TOKEN")
+
 intents = discord.Intents.default()
 
 p_channels = [797634311905738783, 797634937594708038, 797635544255168522, 797635705755926538, 
@@ -101,4 +103,4 @@ async def on_reaction_add(reaction, user):
             await message.delete()
     #elif (reaction.emoji == '\U0001F595'): 
     #await message.delete()
-cli.run('Nzk3NzI1NTI4MjU3MDY5MDU3.X_qpyg.7zliG4DBTn_CQlssa97Knc6dkj0')
+cli.run(token)
