@@ -15,8 +15,8 @@ p_channels = [797634311905738783, 797634937594708038, 797635544255168522, 797635
 797637802182574110, 797637926397673472, 797688928865091625, 801615042201124864]
 
 new_messages = []
-
-profanity = ['fuck', 'fuckery', 'wtf', 'fucking', 'fucks', 'FUCK', 'shit', 'bullshit', 'bullshittery', 'bullshitting', 'motherfucker', 'MOTHERFUCKER', 'bitch', 'BITCH', 'ass', 'assfuckery', 'assfucking a bitch', 'ok that wasnt even a swear word i just wanted to type that']
+repprof = ['ass', ]
+profanity = ['fuck',' fuckery', 'wtf', 'fucking', 'fucks', 'FUCK', 'shit', 'bullshit', 'bullshittery', 'bullshitting', 'motherfucker', 'MOTHERFUCKER', 'bitch', 'BITCH', 'ass', 'assfuckery', 'assfucking a bitch', 'ok that wasnt even a swear word i just wanted to type that']
 
 #async def process_command(command):
 
@@ -25,6 +25,9 @@ profanity = ['fuck', 'fuckery', 'wtf', 'fucking', 'fucks', 'FUCK', 'shit', 'bull
 async def on_message(message):
     global new_messages
     message.content = message.content.lower()
+    for i in profanity:
+        if i in message.content:
+            
     words = message.content.split()
     for i in words:
         if i in profanity:
@@ -58,6 +61,9 @@ async def on_message(message):
         await message.channel.send('no u')
     if message.content.startswith("how to life"):
         await message.channel.send('just don\'t')
+    if message.content.startswith("ryan's love"):
+        await message.channel.send('https://cdn.discordapp.com/attachments/785676419614113842/808565019163361301/Screen_Shot_2021-02-08_at_9.08.38_PM.png')
+        
     #if message.content.startswith("miku"):
     #    await message.channel.send('kawaiiiiiiiiiii')
     
