@@ -25,11 +25,12 @@ async def on_message(message):
     global new_messages
     message.content = message.content.lower()
     words = message.content.split()
-    for i in words:
-        if i in profanity:
-            await message.channel.send("Woah there! Watch the profanity " + message.author.mention)
-            await message.delete()
-            break
+    if (message.channel.id != 785676419614113842):
+        for i in words:
+            if i in profanity:
+                await message.channel.send("Woah there! Watch the profanity " + message.author.mention)
+                await message.delete()
+                break
     if "orz" in message.content:
         await message.channel.send("https://cdn.discordapp.com/attachments/798804481062993924/804575054117208084/745513885523509330.png")
     if message.channel.id == 796911223668998144 and message.content.startswith("> "):
