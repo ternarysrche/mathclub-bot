@@ -23,8 +23,7 @@ profanity = ['fuck',' fuckery', 'wtf', 'fucking', 'fucks', 'FUCK', 'shit', 'bull
 @cli.event
 async def on_message(message):
     global new_messages
-    message.content = message.content.lower()
-    words = message.content.split()
+    words = message.content.lower().split()
     if (message.channel.id != 785676419614113842):
         for i in words:
             if i in profanity:
@@ -32,7 +31,7 @@ async def on_message(message):
                 await message.delete()
                 break
     if "orz" in message.content:
-        await message.channel.send("https://cdn.discordapp.com/attachments/798804481062993924/804575054117208084/745513885523509330.png")
+        await message.channel.send(file=discord.File('./orz.png'))
     if message.channel.id == 796911223668998144 and message.content.startswith("> "):
         await message.add_reaction('\u2611')
         await message.add_reaction('\u274C')
@@ -59,8 +58,7 @@ async def on_message(message):
     if message.content.startswith("how to life"):
         await message.channel.send('just don\'t')
     if message.content.startswith("ryan's love"):
-        await message.channel.send('https://cdn.discordapp.com/attachments/785676419614113842/808565019163361301/Screen_Shot_2021-02-08_at_9.08.38_PM.png')
-        
+        await message.channel.send(file=discord.File('./ryanslove.png'))        
     #if message.content.startswith("miku"):
     #    await message.channel.send('kawaiiiiiiiiiii')
     
