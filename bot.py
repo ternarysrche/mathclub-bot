@@ -23,8 +23,7 @@ profanity = ['fuck',' fuckery', 'wtf', 'fucking', 'fucks', 'FUCK', 'shit', 'bull
 @cli.event
 async def on_message(message):
     global new_messages
-    message.content = message.content.lower()
-    words = message.content.split()
+    words = message.content.lower().split()
     if (message.channel.id != 785676419614113842):
         for i in words:
             if i in profanity:
